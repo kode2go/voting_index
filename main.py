@@ -11,7 +11,7 @@ import requests
 from streamlit_lottie import st_lottie
 import pickle
 from pathlib import Path 
-import streamlit_authenticator as stauth 
+
 
 #Layout
 st.set_page_config(
