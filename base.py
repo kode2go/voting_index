@@ -2,7 +2,6 @@ import streamlit as st
 from streamlit_lottie import st_lottie
 import json
 import os
-import pyautogui
 import pandas as pd
 import plotly.express as px
 
