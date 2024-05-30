@@ -10,14 +10,14 @@ def load_lottiefile(filepath: str):
     with open(filepath,"r") as f:
         return json.load(f)
 
-def style_dataframe(df):
-    # Apply CSS to each column with different colors
-    styled_df = df.style.map(lambda x: 'background-color: lightgreen', subset=pd.IndexSlice[:, 'ANC'])
-    styled_df = styled_df.map(lambda x: 'background-color: lightblue', subset=pd.IndexSlice[:, 'DA'])
-    styled_df = styled_df.map(lambda x: 'background-color: lightcoral', subset=pd.IndexSlice[:, 'EFF'])
-    styled_df = styled_df.map(lambda x: 'background-color: lightgrey', subset=pd.IndexSlice[:, 'Rise'])
-    styled_df = styled_df.format(precision=2)
-    return styled_df
+# def style_dataframe(df):
+#     # Apply CSS to each column with different colors
+#     styled_df = df.style.map(lambda x: 'background-color: lightgreen', subset=pd.IndexSlice[:, 'ANC'])
+#     styled_df = styled_df.map(lambda x: 'background-color: lightblue', subset=pd.IndexSlice[:, 'DA'])
+#     styled_df = styled_df.map(lambda x: 'background-color: lightcoral', subset=pd.IndexSlice[:, 'EFF'])
+#     styled_df = styled_df.map(lambda x: 'background-color: lightgrey', subset=pd.IndexSlice[:, 'Rise'])
+#     styled_df = styled_df.format(precision=2)
+#     return styled_df
 
 # Custom colors for each column
 colors = {
@@ -81,13 +81,16 @@ def base():
 
 
             st.write('Totals:')
-            st.dataframe(style_dataframe(totals),width=2000)
+            # st.dataframe(style_dataframe(totals),width=2000)
+            st.dataframe(totals,width=2000)
 
             st.write('All Totals:')
-            st.dataframe(style_dataframe(df_totals),width=2000)
+            # st.dataframe(style_dataframe(df_totals),width=2000)
+            st.dataframe(df_totals,width=2000)
 
             st.write('Average:')
-            st.dataframe(style_dataframe(avg),width=2000)
+            # st.dataframe(style_dataframe(avg),width=2000)
+            st.dataframe(avg,width=2000)
 
             # Plot the average values
             # st.bar_chart(avg.T)
