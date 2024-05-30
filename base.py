@@ -51,10 +51,6 @@ def base():
     all_totals = pd.DataFrame()
     current_totals = pd.Series()
 
-    if st.button("Reset"):
-        pyautogui.hotkey("ctrl","F5")
-        pyautogui.hotkey('command', 'r')
-
     # Display the data editor
     st.title('Index Input')
     edited_df = st.data_editor(df,width=2000)
