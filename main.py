@@ -13,7 +13,7 @@ if 'submissions' not in st.session_state:
 
 # Create a Streamlit form
 st.title("Party Ranking Form")
-with st.form(key='ranking_form'):
+with st.form(key='ranking_form',clear_on_submit=True):
     name = st.text_input("Enter your name")
 
     # Create input boxes for ratings
